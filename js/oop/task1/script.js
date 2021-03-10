@@ -32,8 +32,6 @@ document.addEventListener('DOMContentLoaded', () =>{
 });
 
 
-
-
 // const createUser = document.querySelector('.createUser').addEventListener('click', function(user) {
 //     user.name = prompt('what is your name?');
 //     user.age = prompt('what is your age?');
