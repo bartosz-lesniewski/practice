@@ -1,6 +1,13 @@
-// same task as task2 but this time i used "new" and "class", not "Object.create"
+// same task as task2 but this time i used "new" and "class", not just "Object.create"
+
+// commented code is version without "class", we can find out here how prototype works with "class"
 
 const users = [];
+
+// function User(name, score) {
+//     this.name = name;
+//     this.score = score;
+// };
 
 class User {
 	constructor(name, score) {
@@ -8,9 +15,17 @@ class User {
 		this.score = score;
 	}
 
+	// User.prototype.increaseScore = function () {
+	// 	this.score++;
+	// };
+
 	increaseScore = function () {
 		this.score++;
 	};
+
+	// User.prototype.decreaseScore = function () {
+	// 	this.score--;
+	// };
 
 	decreaseScore = function () {
 		this.score--;
@@ -37,6 +52,28 @@ class User {
 		const displayUser = document.querySelector("ul");
 		displayUser.appendChild(addUser);
 	};
+
+	// User.prototype.render = function () {
+	// 	const addUser = document.createElement("li");
+	// 	addUser.innerHTML = `
+	//         <p>Name: ${this.name}</p>
+	//         <p score>Score: ${this.score}</p>
+	//         <button btnIncrease>increase score</button>
+	//         <button btnDecrease>decrease score</button>
+	//         `;
+	// 	addUser.querySelector("[btnIncrease]").addEventListener("click", () => {
+	// 		this.increaseScore();
+	// 		addUser.querySelector("[score]").innerHTML = `Score: ${this.score}`;
+	// 	});
+
+	// 	addUser.querySelector("[btnDecrease]").addEventListener("click", () => {
+	// 		this.decreaseScore();
+	// 		addUser.querySelector("[score]").innerHTML = `Score: ${this.score}`;
+	// 	});
+
+	// 	const displayUser = document.querySelector("ul");
+	// 	displayUser.appendChild(addUser);
+	// };
 }
 
 document.addEventListener("DOMContentLoaded", () => {
