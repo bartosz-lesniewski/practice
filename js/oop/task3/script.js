@@ -31,28 +31,6 @@ class User {
 		this.score--;
 	};
 
-	render = function () {
-		const addUser = document.createElement("li");
-		addUser.innerHTML = `
-        <p>Name: ${this.name}</p>
-        <p score>Score: ${this.score}</p>
-        <button btnIncrease>increase score</button>
-        <button btnDecrease>decrease score</button>
-        `;
-		addUser.querySelector("[btnIncrease]").addEventListener("click", () => {
-			this.increaseScore();
-			addUser.querySelector("[score]").innerHTML = `Score: ${this.score}`;
-		});
-
-		addUser.querySelector("[btnDecrease]").addEventListener("click", () => {
-			this.decreaseScore();
-			addUser.querySelector("[score]").innerHTML = `Score: ${this.score}`;
-		});
-
-		const displayUser = document.querySelector("ul");
-		displayUser.appendChild(addUser);
-	};
-
 	// User.prototype.render = function () {
 	// 	const addUser = document.createElement("li");
 	// 	addUser.innerHTML = `
@@ -74,6 +52,28 @@ class User {
 	// 	const displayUser = document.querySelector("ul");
 	// 	displayUser.appendChild(addUser);
 	// };
+
+	render = function () {
+		const addUser = document.createElement("li");
+		addUser.innerHTML = `
+        <p>Name: ${this.name}</p>
+        <p score>Score: ${this.score}</p>
+        <button btnIncrease>increase score</button>
+        <button btnDecrease>decrease score</button>
+        `;
+		addUser.querySelector("[btnIncrease]").addEventListener("click", () => {
+			this.increaseScore();
+			addUser.querySelector("[score]").innerHTML = `Score: ${this.score}`;
+		});
+
+		addUser.querySelector("[btnDecrease]").addEventListener("click", () => {
+			this.decreaseScore();
+			addUser.querySelector("[score]").innerHTML = `Score: ${this.score}`;
+		});
+
+		const displayUser = document.querySelector("ul");
+		displayUser.appendChild(addUser);
+	};
 }
 
 document.addEventListener("DOMContentLoaded", () => {
