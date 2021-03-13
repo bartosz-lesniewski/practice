@@ -1,22 +1,9 @@
+// in this task i create two kind of users.
+// first is normal user and you can change in console his name or points.
+// second one is premium user and he have special extra points and you can increase or decrease it by 1 in console.
+
 const users = [];
 const premiumUsers = [];
-
-function createUser(name, points) {
-	const user = {};
-	user.name = name;
-	user.points = points;
-
-	return user;
-}
-
-function createPremiumUser(name, points, extraPoints) {
-	const premiumUser = {};
-	premiumUser.name = name;
-	premiumUser.points = points;
-	premiumUser.extraPoints = extraPoints;
-
-	return premiumUser;
-}
 
 function showUser() {
 	users.forEach((user) => console.log(user));
@@ -26,7 +13,45 @@ function showPremiumUser() {
 	premiumUsers.forEach((premiumUser) => console.log(premiumUser));
 }
 
-const clearConsole = () => console.clear();
+function clearConsole() {
+	console.clear();
+}
+
+function CreateUser(name, points) {
+	const user = Object.create(userOptions);
+	user.name = name;
+	user.points = points;
+
+	return user;
+}
+
+const userOptions = {
+	changeName(name) {
+		this.name = name;
+	},
+	changePoints(points) {
+		this.points = points;
+	},
+};
+
+function CreatePremiumUser(name, points, extraPoints) {
+	const premiumUser = CreateUser(name, points);
+	premiumUser.extraPoints = extraPoints;
+	Object.setPrototypeOf(premiumUser, premiumOptions);
+
+	return premiumUser;
+}
+
+const premiumOptions = {
+	increaseExtraPoints() {
+		this.extraPoints++;
+	},
+	decreaseExtraPoints() {
+		this.extraPoints--;
+	},
+};
+
+Object.setPrototypeOf(premiumOptions, userOptions);
 
 document.addEventListener("DOMContentLoaded", () => {
 	const btnCreate = document.querySelector(".createUser");
@@ -39,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const name = prompt("what is your name?");
 		const points = prompt("how much points do you have?");
 
-		users.push(createUser(name, points));
+		users.push(CreateUser(name, points));
 	});
 
 	btnCreatePremium.addEventListener("click", () => {
@@ -47,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		const points = prompt("how much points do you have?");
 		const extraPoints = prompt("how much extra points do you have?");
 
-		premiumUsers.push(createPremiumUser(name, points, extraPoints));
+		premiumUsers.push(CreatePremiumUser(name, points, extraPoints));
 	});
 
 	btnShow.addEventListener("click", showUser);
