@@ -5,6 +5,31 @@
 const users = [];
 const premiumUsers = [];
 
+function User(name, points) {
+	this.name = name;
+	this.points = points;
+}
+
+User.prototype.userNewName = function (name) {
+	this.name = name;
+};
+User.prototype.changePoints = function (points) {
+	this.points = points;
+};
+
+function PremiumUser(name, points, extraPoints) {
+	User.call(this, name, points);
+	this.extraPoints = extraPoints;
+}
+PremiumUser.prototype.increaseExtraPoints = function () {
+	this.extraPoints++;
+};
+PremiumUser.prototype.decreaseExtraPoints = function () {
+	this.extraPoints--;
+};
+
+Object.setPrototypeOf(PremiumUser.prototype, User.prototype);
+
 function showUser() {
 	users.forEach((user) => console.log(user));
 }
@@ -17,42 +42,6 @@ function clearConsole() {
 	console.clear();
 }
 
-function CreateUser(name, points) {
-	const user = Object.create(userOptions);
-	user.name = name;
-	user.points = points;
-
-	return user;
-}
-
-const userOptions = {
-	changeName(name) {
-		this.name = name;
-	},
-	changePoints(points) {
-		this.points = points;
-	},
-};
-
-function CreatePremiumUser(name, points, extraPoints) {
-	const premiumUser = CreateUser(name, points);
-	premiumUser.extraPoints = extraPoints;
-	Object.setPrototypeOf(premiumUser, premiumOptions);
-
-	return premiumUser;
-}
-
-const premiumOptions = {
-	increaseExtraPoints() {
-		this.extraPoints++;
-	},
-	decreaseExtraPoints() {
-		this.extraPoints--;
-	},
-};
-
-Object.setPrototypeOf(premiumOptions, userOptions);
-
 document.addEventListener("DOMContentLoaded", () => {
 	const btnCreate = document.querySelector(".createUser");
 	const btnCreatePremium = document.querySelector(".createPremiumUser");
@@ -62,17 +51,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	btnCreate.addEventListener("click", () => {
 		const name = prompt("what is your name?");
-		const points = prompt("how much points do you have?");
+		const points = Number(prompt("how much points do you have?"));
 
-		users.push(CreateUser(name, points));
+		users.push(new User(name, points));
 	});
 
 	btnCreatePremium.addEventListener("click", () => {
 		const name = prompt("what is your name?");
-		const points = prompt("how much points do you have?");
-		const extraPoints = prompt("how much extra points do you have?");
+		const points = Number(prompt("how much points do you have?"));
+		const extraPoints = Number(prompt("how much extra points do you have?"));
 
-		premiumUsers.push(CreatePremiumUser(name, points, extraPoints));
+		premiumUsers.push(new PremiumUser(name, points, extraPoints));
 	});
 
 	btnShow.addEventListener("click", showUser);
