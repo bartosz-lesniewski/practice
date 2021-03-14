@@ -16,6 +16,16 @@ class User {
 	changePoints(points) {
 		this.points = points;
 	}
+	renderUser = function () {
+		const addUser = document.createElement("li");
+		addUser.innerHTML = `
+		<h3>You are regular user!</h3>
+		<p>Name: ${this.name}</p>
+		<p>Points:${this.points}</p>
+		`;
+		const displayUser = document.querySelector(".user");
+		displayUser.appendChild(addUser);
+	};
 }
 
 class PremiumUser extends User {
@@ -29,6 +39,17 @@ class PremiumUser extends User {
 	decreaseExtraPoints() {
 		this.extraPoints--;
 	}
+	renderPremiumUser = function () {
+		const addPremiumUser = document.createElement("li");
+		addPremiumUser.innerHTML = `
+		<h3>You are Premium user!</h3>
+		<p>Name: ${this.name}</p>
+		<p>Points: ${this.points}</p>
+		<p>ExtraPoints: ${this.extraPoints}</p>
+		`;
+		const displayPremiumUser = document.querySelector(".premiumUser");
+		displayPremiumUser.appendChild(addPremiumUser);
+	};
 }
 
 Object.setPrototypeOf(PremiumUser.prototype, User.prototype);
@@ -56,7 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		const name = prompt("what is your name?");
 		const points = Number(prompt("how much points do you have?"));
 
-		users.push(new User(name, points));
+		const regularUser = new User(name, points);
+		users.push(regularUser);
+		regularUser.renderUser();
 	});
 
 	btnCreatePremium.addEventListener("click", () => {
@@ -64,7 +87,9 @@ document.addEventListener("DOMContentLoaded", () => {
 		const points = Number(prompt("how much points do you have?"));
 		const extraPoints = Number(prompt("how much extra points do you have?"));
 
-		premiumUsers.push(new PremiumUser(name, points, extraPoints));
+		const premiumUserr = new PremiumUser(name, points, extraPoints);
+		premiumUsers.push(premiumUserr);
+		premiumUserr.renderPremiumUser();
 	});
 
 	btnShow.addEventListener("click", showUser);
