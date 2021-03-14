@@ -5,28 +5,31 @@
 const users = [];
 const premiumUsers = [];
 
-function User(name, points) {
-	this.name = name;
-	this.points = points;
+class User {
+	constructor(name, points) {
+		this.name = name;
+		this.points = points;
+	}
+	userNewName(name) {
+		this.name = name;
+	}
+	changePoints(points) {
+		this.points = points;
+	}
 }
 
-User.prototype.userNewName = function (name) {
-	this.name = name;
-};
-User.prototype.changePoints = function (points) {
-	this.points = points;
-};
-
-function PremiumUser(name, points, extraPoints) {
-	User.call(this, name, points);
-	this.extraPoints = extraPoints;
+class PremiumUser extends User {
+	constructor(name, points, extraPoints) {
+		super(name, points);
+		this.extraPoints = extraPoints;
+	}
+	increaseExtraPoints() {
+		this.extraPoints++;
+	}
+	decreaseExtraPoints() {
+		this.extraPoints--;
+	}
 }
-PremiumUser.prototype.increaseExtraPoints = function () {
-	this.extraPoints++;
-};
-PremiumUser.prototype.decreaseExtraPoints = function () {
-	this.extraPoints--;
-};
 
 Object.setPrototypeOf(PremiumUser.prototype, User.prototype);
 
