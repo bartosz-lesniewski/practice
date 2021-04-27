@@ -1,0 +1,21 @@
+@import "_variables";
+@import "_mixins";
+
+.header {
+	border-bottom: 1px solid #e1e1e1;
+	height: 79px;
+	background-color: #ffffff;
+}
+
+.header-margin {
+	@include flex-aic;
+	margin-left: 10.7%;
+	justify-content: space-between;
+	height: 79px;
+	width: 1024px;
+	border-left: 1px solid $table-borders;
+}
+
+.header--width {
+	width: (978px / 2);
+}

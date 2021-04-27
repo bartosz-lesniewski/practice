@@ -1,0 +1,128 @@
+@import "_variables";
+@import "_mixins";
+
+.table {
+	background-color: white;
+	background-image: url(img/background-hours.png);
+	width: 978px;
+	height: 580px;
+	border-collapse: collapse;
+	margin-top: 12px;
+	margin-bottom: 20px;
+
+	.checked-position4 {
+		position: absolute;
+		top: 528px;
+		left: 980px;
+	}
+
+	.checked-position3 {
+		position: absolute;
+		top: 436px;
+		left: 980px;
+	}
+
+	.checked-position2 {
+		position: absolute;
+		top: 344px;
+		left: 980px;
+	}
+
+	.checked-position1 {
+		position: absolute;
+		top: 252px;
+		left: 980px;
+	}
+
+	.table__th {
+		border: 1px solid $table-borders;
+		color: $head-h3-color;
+		font-size: 25px;
+		font-weight: normal;
+	}
+
+	.table__td {
+		border: 1px solid $table-borders;
+		text-align: center;
+		color: $header-font-color;
+
+		.vertical-guilt-free {
+			writing-mode: vertical-lr;
+			transform: rotate(180deg);
+			font-size: 33px;
+			color: #c2c2c2;
+		}
+
+		.hour-weight {
+			font-weight: normal;
+			color: $header-font-color;
+		}
+	}
+
+	.table-first-row {
+		color: $header-font-color;
+		font-size: 11.5px;
+		font-weight: bold;
+		text-align: center;
+	}
+
+	.table-width-ef {
+		width: 85px;
+	}
+
+	.table-th-height {
+		height: 51px;
+	}
+
+	.table-height-main {
+		height: 89.5px;
+		font-size: 14px;
+	}
+
+	.table-height-diet {
+		height: 31px;
+	}
+
+	.table-width-main {
+		width: 127px;
+	}
+
+	.check {
+		margin-left: 5px;
+		position: absolute;
+	}
+
+	.printer {
+		position: absolute;
+		bottom: 165px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: normal;
+		font-size: 18px;
+
+		.printer-image {
+			margin-right: 10px;
+		}
+	}
+
+	.text-align-left {
+		text-align: left;
+	}
+
+	.day65 {
+		color: black;
+		border-left: 2px solid rgb(255, 128, 26);
+		border-right: 2px solid rgb(255, 128, 26);
+	}
+	.day65-top {
+		border-top: 2px solid rgb(255, 128, 26);
+		color: rgb(255, 128, 26);
+	}
+	.day65-bottom {
+		border-bottom: 2px solid rgb(255, 128, 26);
+	}
+	.day65-color {
+		color: $header-font-color;
+	}
+}
