@@ -1,0 +1,33 @@
+@import "_variables";
+@import "_mixins";
+
+.main {
+	@include reset;
+	display: flex;
+	justify-content: space-between;
+	width: 978px;
+	height: 100px;
+
+	.head__h3 {
+		margin-top: 38px;
+		font-size: 8.8px;
+		color: rgb(189, 189, 189);
+	}
+	.head__h3-2 {
+		margin-left: 0px;
+		margin-top: 38px;
+		font-size: 8.8px;
+		color: rgb(189, 189, 189);
+	}
+
+	.head__bar {
+		width: 234px;
+		margin-bottom: 15px;
+	}
+
+	.icon-food-wrapper {
+		width: 206px;
+		display: flex;
+		justify-content: space-between;
+	}
+}

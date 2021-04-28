@@ -1,0 +1,15 @@
+@mixin flex-aic {
+	display: flex;
+	align-items: center;
+}
+
+@mixin reset {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin flex-center {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

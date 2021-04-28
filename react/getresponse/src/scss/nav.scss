@@ -1,0 +1,58 @@
+@import "_variables";
+@import "_mixins";
+
+.navigation {
+	.menu {
+		@include flex-aic;
+		padding: 0;
+		margin-top: 17px;
+
+		.menu__item {
+			list-style-type: none;
+			margin-left: 33px;
+
+			.dashboard {
+				position: absolute;
+				left: 912px;
+				top: 35px;
+			}
+			.recipes {
+				position: absolute;
+				left: 1020px;
+				top: 35px;
+			}
+			.challenge {
+				position: absolute;
+				left: 1130px;
+				top: 35px;
+			}
+		}
+
+		.menu__link {
+			text-align: center;
+			width: 144px;
+			display: inline-block;
+			text-decoration: none;
+			font-size: 14.445px;
+			color: $header-font-color;
+			font-weight: bold;
+
+			&::after {
+				content: "";
+				display: block;
+				margin: 5px 59px;
+				border-bottom: 3px solid #ffc79a;
+				transform: scaleX(0);
+				transition: transform 250ms ease-in-out;
+			}
+
+			&:hover {
+				color: $font-orange-color;
+			}
+
+			&:hover::after {
+				transform: scaleX(1);
+			}
+		}
+	}
+}
