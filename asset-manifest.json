@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/practice/tree/main/react/getresponse/static/css/main.3b525bd3.chunk.css",
+    "main.js": "/practice/tree/main/react/getresponse/static/js/main.c429c716.chunk.js",
+    "main.js.map": "/practice/tree/main/react/getresponse/static/js/main.c429c716.chunk.js.map",
+    "runtime-main.js": "/practice/tree/main/react/getresponse/static/js/runtime-main.a96fee36.js",
+    "runtime-main.js.map": "/practice/tree/main/react/getresponse/static/js/runtime-main.a96fee36.js.map",
+    "static/js/2.b686d231.chunk.js": "/practice/tree/main/react/getresponse/static/js/2.b686d231.chunk.js",
+    "static/js/2.b686d231.chunk.js.map": "/practice/tree/main/react/getresponse/static/js/2.b686d231.chunk.js.map",
+    "index.html": "/practice/tree/main/react/getresponse/index.html",
+    "static/css/main.3b525bd3.chunk.css.map": "/practice/tree/main/react/getresponse/static/css/main.3b525bd3.chunk.css.map",
+    "static/js/2.b686d231.chunk.js.LICENSE.txt": "/practice/tree/main/react/getresponse/static/js/2.b686d231.chunk.js.LICENSE.txt",
+    "static/media/Layer216.2793a7a1.svg": "/practice/tree/main/react/getresponse/static/media/Layer216.2793a7a1.svg",
+    "static/media/all.css": "/practice/tree/main/react/getresponse/static/media/background-hours.27fd37d1.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.a96fee36.js",
+    "static/js/2.b686d231.chunk.js",
+    "static/css/main.3b525bd3.chunk.css",
+    "static/js/main.c429c716.chunk.js"
+  ]
+}
