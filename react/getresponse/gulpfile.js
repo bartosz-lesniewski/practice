@@ -21,7 +21,7 @@ function getStyle() {
 		.pipe(concat("all.css"))
 		.pipe(postcss([autoprefixer(), cssnano()]))
 		.pipe(sourcemaps.write("."))
-		.pipe(gulp.dest("./dist/css"));
+		.pipe(gulp.dest("./src/"));
 }
 
 function getImg() {
