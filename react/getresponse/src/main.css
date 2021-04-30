@@ -1,0 +1,41 @@
+.main {
+  margin: 0;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 978px;
+  height: 100px;
+}
+
+.main .head__h3 {
+  margin-top: 38px;
+  font-size: 8.8px;
+  color: #bdbdbd;
+}
+
+.main .head__h3-2 {
+  margin-left: 0px;
+  margin-top: 38px;
+  font-size: 8.8px;
+  color: #bdbdbd;
+}
+
+.main .head__bar {
+  width: 234px;
+  margin-bottom: 15px;
+}
+
+.main .icon-food-wrapper {
+  width: 206px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,66 @@
+.navigation .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  margin-top: 17px;
+}
+
+.navigation .menu .menu__item {
+  list-style-type: none;
+  margin-left: 33px;
+}
+
+.navigation .menu .menu__item .dashboard {
+  position: absolute;
+  left: 912px;
+  top: 35px;
+}
+
+.navigation .menu .menu__item .recipes {
+  position: absolute;
+  left: 1020px;
+  top: 35px;
+}
+
+.navigation .menu .menu__item .challenge {
+  position: absolute;
+  left: 1130px;
+  top: 35px;
+}
+
+.navigation .menu .menu__link {
+  text-align: center;
+  width: 144px;
+  display: inline-block;
+  text-decoration: none;
+  font-size: 14.445px;
+  color: #7c7c7c;
+  font-weight: bold;
+}
+
+.navigation .menu .menu__link::after {
+  content: "";
+  display: block;
+  margin: 5px 59px;
+  border-bottom: 3px solid #ffc79a;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
+}
+
+.navigation .menu .menu__link:hover {
+  color: #ff801a;
+}
+
+.navigation .menu .menu__link:hover::after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+/*# sourceMappingURL=nav.css.map */

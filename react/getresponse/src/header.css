@@ -1,0 +1,26 @@
+.header {
+  border-bottom: 1px solid #e1e1e1;
+  height: 79px;
+  background-color: #ffffff;
+}
+
+.header-margin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 10.7%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 79px;
+  width: 1024px;
+  border-left: 1px solid #e9e9e9;
+}
+
+.header--width {
+  width: 489px;
+}
+/*# sourceMappingURL=header.css.map */

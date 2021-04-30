@@ -93,8 +93,7 @@
 	}
 
 	.printer {
-		position: absolute;
-		bottom: 165px;
+		position: sticky;
 		display: flex;
 		justify-content: center;
 		align-items: center;
