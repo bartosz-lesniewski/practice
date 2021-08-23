@@ -1,18 +1,28 @@
-// import TypeNick from './components/TypeNick';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import CardNumber from './components/CardNumber';
+import TypeNick from './components/TypeNick';
 
 function App() {
-  const console = () => {
-    const btn = document.querySelector('.button');
-    window.console.log(btn);
-  };
-
   return (
-    <div className="App">
-      <button className="button" onClick={console}>
-        GetStarted
-      </button>
-      {/* <TypeNick /> */}
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/" exact component={Home}></Route>
+          <Route path="/typenick" component={TypeNick}></Route>
+          <Route path="/cardnumber" component={CardNumber}></Route>
+        </Switch>
+      </div>
+    </Router>
+  );
+}
+
+function Home() {
+  return (
+    <main>
+      <Link to="/typenick">
+        <button className="button">GetStarted</button>
+      </Link>
+    </main>
   );
 }
 
