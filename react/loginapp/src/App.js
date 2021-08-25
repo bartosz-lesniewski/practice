@@ -1,6 +1,8 @@
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import CardNumber from './components/CardNumber';
 import TypeNick from './components/TypeNick';
+import { validate } from 'json-schema';
+import { initialValues } from './components/Validate';
 
 function App() {
   return (
@@ -8,7 +10,12 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/" exact component={Home}></Route>
-          <Route path="/typenick" component={TypeNick}></Route>
+          <Route
+            path="/typenick"
+            render={() => (
+              <TypeNick validate={validate} initialValues={initialValues} />
+            )}
+          ></Route>
           <Route path="/cardnumber" component={CardNumber}></Route>
         </Switch>
       </div>

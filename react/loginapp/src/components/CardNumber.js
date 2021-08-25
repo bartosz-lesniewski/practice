@@ -3,12 +3,25 @@ import { Link } from 'react-router-dom';
 
 function CardNumber() {
   return (
-    <main>
-      <Link to="/">
-        <button className="button">Finish</button>
-      </Link>
-      <h1>Type your card’s number</h1>
-      <input></input>
+    <main className="main">
+      <form className="form" method="GET">
+        <Link to="/">
+          <button className="button" type="submit">
+            Finish
+          </button>
+        </Link>
+        <label htmlFor="card-number" className="label">
+          Type your card’s number:
+        </label>
+        <input
+          className="input input-card"
+          type="text"
+          name="card-number"
+          required
+          autoFocus
+        ></input>
+      </form>
+      <div className="wrong-input"></div>
     </main>
   );
 }
