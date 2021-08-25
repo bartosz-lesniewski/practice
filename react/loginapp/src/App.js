@@ -32,7 +32,7 @@ function Home() {
   return (
     <main>
       <Link to="/typenick">
-        <button className="button">GetStarted</button>
+        <button className="btn btn-info">GetStarted</button>
       </Link>
     </main>
   );

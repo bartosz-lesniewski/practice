@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FormError } from './FormError';
+import Modal from './Modal';
 
 class CardNumber extends Component {
   constructor(props) {
@@ -43,24 +44,35 @@ class CardNumber extends Component {
     this.setState({ formValid: this.state.cardNumberValid });
   }
 
+  state = {
+    show: false,
+  };
+
+  showModal = (e) => {
+    this.setState({ show: true });
+  };
+
   render() {
     return (
       <main className="main">
         <form className="form" method="GET">
-          <Link to="/">
-            <button
-              className="button"
-              type="submit"
-              disabled={!this.state.formValid}
-            >
-              Finish
-            </button>
-          </Link>
+          {/* <Link to="/modal"> */}
+          <button
+            className="btn btn-info"
+            type="submit"
+            disabled={!this.state.formValid}
+            onClick={(e) => {
+              this.showModal();
+            }}
+          >
+            Finish
+          </button>
+          {/* </Link> */}
           <label htmlFor="cardNumber" className="label">
             Type your card’s number:
           </label>
           <input
-            className="input input-card"
+            className="form-control"
             type="text"
             name="cardNumber"
             required
@@ -72,6 +84,7 @@ class CardNumber extends Component {
         <div className="wrong-input">
           <FormError formError={this.state.formError} />
         </div>
+        <Modal show={this.state.show} />
       </main>
     );
   }

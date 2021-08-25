@@ -53,7 +53,7 @@ class TypeNick extends Component {
         <form className="form" method="GET">
           <Link to="/cardnumber">
             <button
-              className="button"
+              className="btn btn-info"
               type="submit"
               disabled={!this.state.formValid}
             >
@@ -64,7 +64,8 @@ class TypeNick extends Component {
             Type your nickname:
           </label>
           <input
-            className="input input-nickname"
+            placeholder="Type your nickname:"
+            className="form-control"
             type="text"
             name="nickname"
             required
