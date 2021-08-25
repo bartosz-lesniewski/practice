@@ -30,7 +30,7 @@ class TypeNick extends Component {
         nicknameValid =
           value.length > 2 &&
           value.length <= 20 &&
-          value.match(/[^a-zA-Z0-9\-\/]/);
+          value.match(/^[0-9a-zA-Z_\-]+$/);
         fieldValidationError.nickname = nicknameValid ? '' : 'is invalid';
         break;
     }
