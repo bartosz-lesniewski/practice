@@ -16,7 +16,12 @@ function App() {
               <TypeNick validate={validate} initialValues={initialValues} />
             )}
           ></Route>
-          <Route path="/cardnumber" component={CardNumber}></Route>
+          <Route
+            path="/cardnumber"
+            render={() => (
+              <CardNumber validate={validate} initialValues={initialValues} />
+            )}
+          ></Route>
         </Switch>
       </div>
     </Router>

@@ -31,7 +31,9 @@ class TypeNick extends Component {
           value.length > 2 &&
           value.length <= 20 &&
           value.match(/^[0-9a-zA-Z_\-]+$/);
-        fieldValidationError.nickname = nicknameValid ? '' : 'is invalid';
+        fieldValidationError.nickname = nicknameValid
+          ? ''
+          : 'is invalid - it have to be minimum 3 chars and maximum 20 chars. You can use chars, digits, dash and underscore.';
         break;
     }
 
@@ -45,9 +47,6 @@ class TypeNick extends Component {
     this.setState({ formValid: this.state.nicknameValid });
   }
 
-  errorClass(error) {
-    return error.length === 0 ? '' : 'has-error';
-  }
   render() {
     return (
       <main className="main">
